@@ -11,7 +11,7 @@ namespace Meta
     enum {
       value = SquareRoot<
         Number,
-        ((Guess + Number / Guess) / 2),
+        ((Guess + Number / Guess + 1) / 2),
         Iter - 1
       >::value
     };

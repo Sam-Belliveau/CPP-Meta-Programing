@@ -14,7 +14,7 @@ namespace Meta
     enum {
       value = Root<
         Number, RPow,
-        ((Guess + Number / Power<Guess, RPow - 1>::value) / 2),
+        ((Guess + Number / Power<Guess, RPow - 1>::value + 1) / 2),
         Iter - 1
       >::value
     };
