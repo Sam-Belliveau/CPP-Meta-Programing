@@ -3,32 +3,21 @@
 
 #include "MetaHeader.hpp"
 
-namespace Meta{
-
-template<Int_t Base, UInt_t Power>
-struct MetaPower
+namespace Meta
 {
-  enum {
-    value = Base * MetaPower<Base, Power-1>::value
+  template<Int_t Base, UInt_t Exp>
+  struct Power
+  {
+    enum {
+      value = Base * Power<Base, Exp - 1>::value
+    };
   };
-};
 
-template<Int_t Base>
-struct MetaPower<Base, 1>
-{
-  enum {
-    value = Base
-  };
-};
+  template<Int_t Base>
+  struct Power<Base, 1> { enum { value = Base }; };
 
-template<Int_t Base>
-struct MetaPower<Base, 0>
-{
-  enum {
-    value = 1
-  };
-};
-
+  template<Int_t Base>
+  struct Power<Base, 0> { enum { value = 1 }; };
 }
 
 #endif

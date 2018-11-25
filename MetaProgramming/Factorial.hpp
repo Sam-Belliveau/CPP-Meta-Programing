@@ -3,20 +3,18 @@
 
 #include "MetaHeader.hpp"
 
-namespace Meta{
-
-template<UInt_t Number>
-struct Factorial
+namespace Meta
 {
-  enum {
-    value = Number * Factorial<Number - 1>::value
+  template<UInt_t Number>
+  struct Factorial
+  {
+    enum {
+      value = Number * Factorial<Number - 1>::value
+    };
   };
-};
 
-template<>
-struct Factorial<0>
-{ enum { value = 1 }; };
-
+  template<>
+  struct Factorial<0> { enum { value = 1 }; };
 }
 
 #endif

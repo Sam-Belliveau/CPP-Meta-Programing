@@ -3,12 +3,11 @@
 
 #include <cstdint>
 
-namespace Meta{
-
-// Variables that are used as input
-using Int_t = intmax_t;
-using UInt_t = uintmax_t;
-
+namespace Meta
+{
+  // Variables that are used as input
+  using Int_t = intmax_t;
+  using UInt_t = uintmax_t;
 }
 
 #endif

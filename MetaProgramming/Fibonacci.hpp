@@ -3,22 +3,21 @@
 
 #include "MetaHeader.hpp"
 
-namespace Meta{
-
-template<UInt_t N>
-struct Fibonacci
+namespace Meta
 {
-  enum {
-    value = Fibonacci<N-1>::value + Fibonacci<N-2>::value
+  template<UInt_t N>
+  struct Fibonacci
+  {
+    enum {
+      value = Fibonacci<N-1>::value + Fibonacci<N-2>::value
+    };
   };
-};
 
-template<>
-struct Fibonacci<0> { enum { value = 0 }; };
+  template<>
+  struct Fibonacci<1> { enum { value = 1 }; };
 
-template<>
-struct Fibonacci<1> { enum { value = 1 }; };
-
+  template<>
+  struct Fibonacci<0> { enum { value = 0 }; };
 }
 
 #endif
