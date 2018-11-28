@@ -2,7 +2,6 @@
 #define SAMS_META_LOG_TWO_HPP 1
 
 #include "MetaHeader.hpp"
-#include "Power.hpp"
 
 namespace Meta
 {
